@@ -1,0 +1,389 @@
+{
+  "patterns": [
+    {
+      "id": "monolithic",
+      "name": "Monolithic Architecture",
+      "description": "Single unified codebase with tightly coupled components, deployed as a single unit.",
+      "pros": [
+        "Simple to develop initially",
+        "Easier testing and debugging",
+        "Better performance (fewer network calls)",
+        "Simpler deployment process",
+        "Easier to maintain consistency"
+      ],
+      "cons": [
+        "Difficult to scale horizontally",
+        "Technology lock-in",
+        "Harder to maintain as codebase grows",
+        "Limited team scalability",
+        "Risk of cascading failures"
+      ],
+      "best_for": [
+        "Small to medium projects",
+        "Startups with limited resources",
+        "Projects with tight timelines",
+        "Simple business logic"
+      ],
+      "avoid_when": [
+        "High scalability requirements",
+        "Large distributed teams",
+        "Frequent independent deployments needed",
+        "Mixed technology stack needed"
+      ],
+      "implementation_effort": "low",
+      "learning_curve": "low",
+      "scalability": "low",
+      "maintainability": "medium",
+      "team_size_fit": "small",
+      "cost": "low"
+    },
+    {
+      "id": "microservices",
+      "name": "Microservices Architecture",
+      "description": "System built as collection of loosely coupled, independently deployable services.",
+      "pros": [
+        "Excellent horizontal scalability",
+        "Independent deployment and updates",
+        "Technology flexibility",
+        "Team autonomy and parallel development",
+        "Fault isolation",
+        "Easy to replace individual services"
+      ],
+      "cons": [
+        "Increased complexity",
+        "Distributed system challenges (consistency, latency)",
+        "Operational overhead",
+        "Network communication overhead",
+        "Requires mature DevOps practices",
+        "Data consistency challenges"
+      ],
+      "best_for": [
+        "Large-scale applications",
+        "Systems with independent scaling needs",
+        "Organizations with multiple teams",
+        "Projects requiring technology diversity",
+        "High availability requirements"
+      ],
+      "avoid_when": [
+        "Very small projects",
+        "Simple domain with tight coupling",
+        "Limited DevOps resources",
+        "Frequent database transactions needed"
+      ],
+      "implementation_effort": "high",
+      "learning_curve": "high",
+      "scalability": "high",
+      "maintainability": "high",
+      "team_size_fit": "large",
+      "cost": "high"
+    },
+    {
+      "id": "event_driven",
+      "name": "Event-Driven Architecture",
+      "description": "Components communicate through events, enabling loose coupling and asynchronous processing.",
+      "pros": [
+        "Excellent scalability",
+        "Loose coupling between components",
+        "Supports asynchronous processing",
+        "Good for real-time systems",
+        "Easy to add new event consumers",
+        "Supports complex workflows"
+      ],
+      "cons": [
+        "Debugging complexity",
+        "Event ordering challenges",
+        "Testing complexity",
+        "Eventual consistency issues",
+        "Learning curve for teams",
+        "Distributed transaction issues"
+      ],
+      "best_for": [
+        "Real-time systems",
+        "IoT applications",
+        "Stream processing",
+        "High-frequency data processing",
+        "Loosely coupled systems"
+      ],
+      "avoid_when": [
+        "Immediate consistency required",
+        "Complex transactions",
+        "Simple, linear workflows",
+        "Inexperienced teams"
+      ],
+      "implementation_effort": "high",
+      "learning_curve": "high",
+      "scalability": "high",
+      "maintainability": "medium",
+      "team_size_fit": "large",
+      "cost": "medium"
+    },
+    {
+      "id": "serverless",
+      "name": "Serverless Architecture",
+      "description": "Application built using cloud functions (Lambda, Cloud Functions) without managing infrastructure.",
+      "pros": [
+        "No infrastructure management",
+        "Automatic scaling",
+        "Pay-per-use pricing",
+        "Rapid deployment",
+        "Reduced operational overhead",
+        "Built-in fault tolerance"
+      ],
+      "cons": [
+        "Vendor lock-in",
+        "Cold start latency",
+        "Execution time limits",
+        "Monitoring complexity",
+        "Debugging challenges",
+        "State management difficulties"
+      ],
+      "best_for": [
+        "Event-driven applications",
+        "APIs and webhooks",
+        "Scheduled tasks",
+        "Batch processing",
+        "Low-latency not critical"
+      ],
+      "avoid_when": [
+        "Long-running processes",
+        "Stateful applications",
+        "Performance critical systems",
+        "Complex monitoring needed"
+      ],
+      "implementation_effort": "medium",
+      "learning_curve": "medium",
+      "scalability": "high",
+      "maintainability": "medium",
+      "team_size_fit": "small",
+      "cost": "low"
+    },
+    {
+      "id": "layered",
+      "name": "Layered (N-Tier) Architecture",
+      "description": "System organized into horizontal layers (presentation, business, persistence, database).",
+      "pros": [
+        "Clear separation of concerns",
+        "Easy to understand and develop",
+        "Good for standard business applications",
+        "Familiar to most developers",
+        "Good testability",
+        "Clear role definition"
+      ],
+      "cons": [
+        "Performance overhead from layer crossing",
+        "Difficult to scale individual layers",
+        "Database becomes bottleneck",
+        "Tight coupling between layers possible",
+        "Limited technology flexibility"
+      ],
+      "best_for": [
+        "Enterprise business applications",
+        "CRUD-heavy applications",
+        "Standard line-of-business apps",
+        "Teams following traditional patterns"
+      ],
+      "avoid_when": [
+        "High scalability needs",
+        "Complex domain models",
+        "Real-time systems",
+        "Independent scaling needed"
+      ],
+      "implementation_effort": "low",
+      "learning_curve": "low",
+      "scalability": "medium",
+      "maintainability": "high",
+      "team_size_fit": "medium",
+      "cost": "low"
+    },
+    {
+      "id": "cqrs",
+      "name": "CQRS (Command Query Responsibility Segregation)",
+      "description": "Separates read and write operations into different models and data stores.",
+      "pros": [
+        "Independent scaling of reads and writes",
+        "Optimized data access patterns",
+        "Simplified complex queries",
+        "Good for event sourcing",
+        "Better performance for specific scenarios",
+        "Clear separation of concerns"
+      ],
+      "cons": [
+        "Increased complexity",
+        "Eventual consistency issues",
+        "More code to maintain",
+        "Synchronization challenges",
+        "Not ideal for simple CRUD apps",
+        "Learning curve"
+      ],
+      "best_for": [
+        "Complex read/write patterns",
+        "High transaction volumes",
+        "Analytical workloads",
+        "Event sourcing implementations",
+        "Domain-driven design projects"
+      ],
+      "avoid_when": [
+        "Simple CRUD applications",
+        "Immediate consistency required",
+        "Small project size",
+        "Limited team expertise"
+      ],
+      "implementation_effort": "high",
+      "learning_curve": "high",
+      "scalability": "high",
+      "maintainability": "medium",
+      "team_size_fit": "medium",
+      "cost": "high"
+    },
+    {
+      "id": "hexagonal",
+      "name": "Hexagonal (Ports & Adapters) Architecture",
+      "description": "Core business logic isolated with adapters handling external concerns.",
+      "pros": [
+        "Core logic independent of external systems",
+        "Easy to test business logic",
+        "Flexible technology choices for external layers",
+        "Clear separation of concerns",
+        "Easy to change implementations",
+        "Good for complex business domains"
+      ],
+      "cons": [
+        "Increased code complexity",
+        "More boilerplate code",
+        "Steeper learning curve",
+        "Overhead for simple projects",
+        "Team coordination needed"
+      ],
+      "best_for": [
+        "Complex business logic",
+        "Domain-driven design",
+        "Systems needing multiple interfaces",
+        "Projects requiring high testability"
+      ],
+      "avoid_when": [
+        "Simple CRUD applications",
+        "Rapid prototyping",
+        "Inexperienced teams",
+        "Small project scope"
+      ],
+      "implementation_effort": "high",
+      "learning_curve": "high",
+      "scalability": "medium",
+      "maintainability": "high",
+      "team_size_fit": "medium",
+      "cost": "medium"
+    },
+    {
+      "id": "api_gateway",
+      "name": "API Gateway Pattern",
+      "description": "Single entry point for client requests, routing and transforming them to backend services.",
+      "pros": [
+        "Single point of entry",
+        "Request routing and load balancing",
+        "Protocol translation",
+        "Security enforcement point",
+        "Rate limiting and throttling",
+        "Cross-cutting concerns centralization"
+      ],
+      "cons": [
+        "Single point of failure risk",
+        "Performance bottleneck potential",
+        "Configuration complexity",
+        "Additional latency",
+        "Requires careful scalability planning"
+      ],
+      "best_for": [
+        "Microservices architectures",
+        "Public APIs",
+        "Mobile applications",
+        "Complex routing needs"
+      ],
+      "avoid_when": [
+        "Single monolithic application",
+        "High performance is critical",
+        "Limited ops resources"
+      ],
+      "implementation_effort": "medium",
+      "learning_curve": "low",
+      "scalability": "high",
+      "maintainability": "high",
+      "team_size_fit": "medium",
+      "cost": "medium"
+    },
+    {
+      "id": "saga",
+      "name": "Saga Pattern",
+      "description": "Manages distributed transactions across multiple services using orchestration or choreography.",
+      "pros": [
+        "Handles transactions across services",
+        "Maintains data consistency",
+        "Supports long-running processes",
+        "Better than 2-phase commit",
+        "Flexibility in implementation",
+        "Supports complex workflows"
+      ],
+      "cons": [
+        "Complexity in implementation",
+        "Debugging challenges",
+        "Testing complexity",
+        "Eventual consistency",
+        "Rollback complexity",
+        "Learning curve"
+      ],
+      "best_for": [
+        "Distributed transactions",
+        "Long-running business processes",
+        "Order processing systems",
+        "Payment workflows"
+      ],
+      "avoid_when": [
+        "Simple single-service operations",
+        "Immediate consistency required",
+        "Limited team expertise"
+      ],
+      "implementation_effort": "high",
+      "learning_curve": "high",
+      "scalability": "high",
+      "maintainability": "medium",
+      "team_size_fit": "large",
+      "cost": "high"
+    },
+    {
+      "id": "strangler",
+      "name": "Strangler Pattern",
+      "description": "Gradually replace monolith with microservices by intercepting requests.",
+      "pros": [
+        "Incremental migration",
+        "Low risk approach",
+        "Can run old and new in parallel",
+        "No big bang rewrite",
+        "Team learns gradually",
+        "Easy rollback"
+      ],
+      "cons": [
+        "Long migration period",
+        "Increased complexity during transition",
+        "Dual maintenance",
+        "Performance overhead during migration",
+        "Requires discipline"
+      ],
+      "best_for": [
+        "Monolith to microservices migration",
+        "Legacy system modernization",
+        "Risk-averse organizations",
+        "Large teams"
+      ],
+      "avoid_when": [
+        "Greenfield projects",
+        "Need for quick transformation",
+        "Simple systems"
+      ],
+      "implementation_effort": "high",
+      "learning_curve": "medium",
+      "scalability": "high",
+      "maintainability": "medium",
+      "team_size_fit": "large",
+      "cost": "high"
+    }
+  ]
+}
